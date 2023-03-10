@@ -24,7 +24,38 @@ const Text = styled(Typography)`
     color: #44444d;
     line-height: 27px;
 
-`
+`;
+
+const RightContainer = styled(Grid) ( ({ theme }) => ({
+    margin: '5px 0 0 -25px',
+    display: 'flex',
+    flexDirection: 'column',
+    [theme.breakpoints.between('sm', 'lg')]: {
+        padding: '0 5px'
+    },
+    [theme.breakpoints.down('sm')]: {
+        margin: '5px 0'
+    }
+}));
+
+const Author = styled(Typography)`
+    color: #808290;
+    font-size: 12px;
+    line-height: 22px;
+`;
+
+const Description = styled(Typography)`
+    line-height: 22px;
+    color: #44444d;
+    margin-top: 5px;
+    font-weight: 300;
+`;
+
+const Publisher = styled(Typography)`
+    font-size: 12px;
+    margin-top: auto;
+    margin-bottom: 10px;
+`;
 
 const Article = ({ data }) => {
     return (
@@ -34,14 +65,14 @@ const Article = ({ data }) => {
                     <Grid lg={5} sm={5} xs={12} item>
                         <Image src={data.url} />
                     </Grid>
-                    <Grid lg={7} md={7} sm={7} xs={12} item>
+                    <RightContainer lg={7} md={7} sm={7} xs={12} item>
                         <Text>{ data.title}</Text>
-                        <Typography>
+                        <Author>
                             <b>short</b> by {data.author} / {new Date(data.timestamp).toDateString()}
-                        </Typography>
-                        <Typography>{data.description}</Typography>
-                        <Typography>read more at <a href={data.link} target="_blank">{data.publisher}</a></Typography>
-                    </Grid>
+                        </Author>
+                        <Description>{data.description}</Description>
+                        <Publisher>read more at <a style={{textDecoration: 'none', color: '#000'}} href={data.link} target="_blank"><b>{data.publisher}</b></a></Publisher>
+                    </RightContainer>
                 </Grid>
             </Container>
         </Component>

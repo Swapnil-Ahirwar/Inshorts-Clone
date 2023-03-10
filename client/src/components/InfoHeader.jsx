@@ -1,14 +1,17 @@
 import { Typography, Box, styled } from '@mui/material';
 
 
-const Container = styled(Box)`
-    background: #f44336;  
-    color: #ffffff;
-    display: flex;
-    align-items: center;  
-    height: 48px;
-    margin-bottom: 30px
-`;
+const Container = styled(Box)( ({ theme }) => ({
+    background: '#f44336',  
+    color: '#ffffff',
+    display: 'flex',
+    alignItems: 'center',  
+    height: 48,
+    marginBottom: 30,
+    [theme.breakpoints.down('md')]: {
+        display: 'none'
+    }
+}));
 
 const Image = styled('img')({
     height: 34,
