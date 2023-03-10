@@ -1,6 +1,7 @@
-import { Box } from "@mui/material";
 import { useEffect, useState} from "react";
 import { getNews } from "../service/api";
+
+import InfiniteScroll from 'react-infinite-scroll-component';
 
 //components
 import Article from "./Article";
@@ -8,25 +9,33 @@ import Article from "./Article";
 const Articles = () => {
 
     const [news, setNews] = useState([]); 
+    const [page, setPage] = useState(0);
 
     useEffect(() => {
+        const dailyNews = async () => {
+            const response = await getNews(page);
+            console.log(new Set([...news, ...response.data]));
+            setNews([...new Set([...news, ...response.data])]);
+        }
         dailyNews();
-    }, []);
+    }, [page])
 
-    const dailyNews = async() => {
-        let response = await getNews();
-        console.log(response.data);
-        setNews(response.data);
-    }
+    useEffect(() => {
+        console.log(news);
+    }, [news])
 
     return (
-        <Box>
-            {
-                news.map(data => (
-                    <Article data={data}/>
-                ))
-            }
-        </Box>
+        <InfiniteScroll
+        dataLength={news.length}
+        next={() => setPage(page => page + 1)}
+        hasMore={true}
+    >
+        {
+            news.map(data => (
+                <Article data={data} />
+            ))
+        }
+    </InfiniteScroll>
     )
 }
 
