@@ -14,14 +14,14 @@ const Articles = () => {
     useEffect(() => {
         const dailyNews = async () => {
             const response = await getNews(page);
-            console.log(new Set([...news, ...response.data]));
+            // console.log(new Set([...news, ...response.data]));
             setNews([...new Set([...news, ...response.data])]);
         }
         dailyNews();
     }, [page])
 
     useEffect(() => {
-        console.log(news);
+        // console.log(news);
     }, [news])
 
     return (
@@ -32,7 +32,7 @@ const Articles = () => {
     >
         {
             news.map(data => (
-                <Article data={data} />
+                <Article data={data} key={data._id} />
             ))
         }
     </InfiniteScroll>
