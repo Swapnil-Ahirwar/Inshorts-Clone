@@ -28,7 +28,7 @@ const Header = () => {
     const url = 'https://assets.inshorts.com/website_assets/images/logo_inshorts.png';
 
     return (
-        <StyledHeader position='static'>
+        <StyledHeader position='sticky'>
             
             <Toolbar>
                 <MenuIcon /><span><MenuText>Menu</MenuText></span>
