@@ -7,6 +7,7 @@ const Container = styled(Box)`
     display: flex;
     align-items: center;  
     height: 48px;
+    margin-bottom: 30px
 `;
 
 const Image = styled('img')({
@@ -19,7 +20,7 @@ const Image = styled('img')({
 const Text = styled(Typography)`
     font-size: 14px;
     font-weight: 300;
-    margin-left: 50px
+    margin-left: 50px;
 `
 
 const InfoHeader = () => {
