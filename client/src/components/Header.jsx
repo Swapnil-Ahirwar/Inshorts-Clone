@@ -1,4 +1,4 @@
-import { styled, AppBar, Toolbar } from '@mui/material';
+import { styled, AppBar, Toolbar, Typography } from '@mui/material';
 import { Menu } from '@mui/icons-material';
 
 
@@ -15,7 +15,12 @@ const Image = styled('img')({
     height: 55,
     margin: 'auto',
     paddingRight: 70
-})
+});
+
+const MenuText = styled(Typography)`
+    color: #44444d;
+    font-size: 13px;
+`
 
 
 const Header = () => {
@@ -24,8 +29,9 @@ const Header = () => {
 
     return (
         <StyledHeader position='static'>
+            
             <Toolbar>
-                <MenuIcon />
+                <MenuIcon /><span><MenuText>Menu</MenuText></span>
                 <Image src={url} alt='logo' />
             </Toolbar>
         </StyledHeader>

@@ -1,4 +1,4 @@
-import { Typography, Box, styled } from '@mui/material';
+import { Typography, Box, styled, Button } from '@mui/material';
 
 
 const Container = styled(Box)( ({ theme }) => ({
@@ -37,8 +37,16 @@ const InfoHeader = () => {
                 For the best experience use inshorts app on your smartphone
             </Text>
             <Box style={{ display: 'flex', marginLeft: 'auto'}}>
-                <Image src={appleStore} alt="applestore" />
-                <Image src={googleStore} alt="googlestore" />
+                <a target="_blank" href="https://apps.apple.com/us/app/news-in-shorts/id892146527">
+                    <Button>
+                        <Image src={appleStore} alt="applestore" />
+                    </Button>
+                </a>
+                <a target="_blank" href="https://play.google.com/store/apps/details?id=com.nis.app&referrer=utm_source%3DNews%2520In%2520Shorts%2520Website">
+                    <Button>
+                        <Image src={googleStore} alt="googlestore" />
+                    </Button>
+                </a>
             </Box>
         </Container>
     )
