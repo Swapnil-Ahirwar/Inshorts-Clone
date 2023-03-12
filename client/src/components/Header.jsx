@@ -14,7 +14,7 @@ const MenuIcon = styled(Menu)`
 const Image = styled('img')({
     height: 55,
     margin: 'auto',
-    paddingLeft: 500
+    paddingLeft: 70
 });
 
 const MenuText = styled(Typography)`
@@ -32,11 +32,7 @@ const Header = () => {
             
             <Toolbar>
                 <MenuIcon /><span><MenuText>Menu</MenuText></span>
-                <a target="_blank" href='https://www.inshorts.com/'>
-                    <Button>
-                        <Image src={url} alt='logo' />
-                    </Button>
-                </a>
+                <Image src={url} alt='logo' />
             </Toolbar>
         </StyledHeader>
     )
