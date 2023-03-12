@@ -1,4 +1,4 @@
-import { styled, AppBar, Toolbar, Typography } from '@mui/material';
+import { styled, AppBar, Toolbar, Typography, Button } from '@mui/material';
 import { Menu } from '@mui/icons-material';
 
 
@@ -14,7 +14,7 @@ const MenuIcon = styled(Menu)`
 const Image = styled('img')({
     height: 55,
     margin: 'auto',
-    paddingRight: 70
+    paddingLeft: 500
 });
 
 const MenuText = styled(Typography)`
@@ -32,7 +32,11 @@ const Header = () => {
             
             <Toolbar>
                 <MenuIcon /><span><MenuText>Menu</MenuText></span>
-                <Image src={url} alt='logo' />
+                <a target="_blank" href='https://www.inshorts.com/'>
+                    <Button>
+                        <Image src={url} alt='logo' />
+                    </Button>
+                </a>
             </Toolbar>
         </StyledHeader>
     )
