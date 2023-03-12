@@ -1,11 +1,21 @@
 {
-  "name": "clone-inshorts",
+  "name": "inshorts-clone",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Swapnil-Ahirwar/Inshorts-Clone.git",
+    "build": "cd server && npm install  && cd ../client && npm install && npm run build",
+    "start": "node server/server.js",
+  },
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Swapnil-Ahirwar/Inshorts-Clone/issues"
+  },
+  "homepage": "https://github.com/Swapnil-Ahirwar/Inshorts-Clone#readme"
 }
